@@ -1,7 +1,9 @@
 package com.te.ems;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 /*
 * SpringApplication.run(Class<?> primarySource, String... args) is called.
@@ -24,4 +26,10 @@ public class EMSApplication {
         SpringApplication.run(EMSApplication.class, args);
     }
 
+    @Bean
+    public CommandLineRunner commandLineRunner() {
+        return args -> {
+            System.out.println("commandLineRunner() method executed!");
+        };
+    }
 }
